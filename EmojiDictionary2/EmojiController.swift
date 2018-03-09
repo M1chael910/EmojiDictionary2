@@ -71,10 +71,6 @@ class EmojiController: UITableViewController {
         cell.textLabel?.text = "\(emoji.symbol) - \(emoji.name)"
         cell.detailTextLabel?.text = emoji.description
         cell.showsReorderControl = true
-        
-
-        
-
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
