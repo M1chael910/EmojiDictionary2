@@ -25,7 +25,12 @@ class EmojiController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    @IBAction func AddNewEmojiButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "emojiToCreator", sender: nil)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
