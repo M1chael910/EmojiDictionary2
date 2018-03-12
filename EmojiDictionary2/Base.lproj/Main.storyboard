@@ -33,15 +33,21 @@
                             <outlet property="delegate" destination="hdL-ag-tyx" id="KMf-Sm-x5e"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jnZ-6y-fk6"/>
+                    <navigationItem key="navigationItem" id="jnZ-6y-fk6">
+                        <barButtonItem key="rightBarButtonItem" title="Add New Emoji" id="ezy-77-ynm">
+                            <connections>
+                                <action selector="AddNewEmojiButtonPressed:" destination="hdL-ag-tyx" id="HDA-uf-j82"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="xse-OB-reW" kind="show" identifier="EmojiToDetail" id="QCC-UR-5Sg"/>
-                        <segue destination="h1x-9h-yOZ" kind="presentation" id="Lf7-fi-XNz"/>
+                        <segue destination="9kk-bM-G6f" kind="show" identifier="emojiToCreator" id="UvA-gw-ou2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zX6-dp-YBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="173"/>
+            <point key="canvasLocation" x="1139" y="157"/>
         </scene>
         <!--Emoji Detail View Controller-->
         <scene sceneID="8z7-tq-YEc">
@@ -106,22 +112,81 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9W-gv-imG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2158" y="-254"/>
+            <point key="canvasLocation" x="2158" y="-206"/>
         </scene>
         <!--Emoji Creater View Controller-->
-        <scene sceneID="eaw-Hb-Yx8">
+        <scene sceneID="Au5-zQ-hvD">
             <objects>
-                <viewController id="h1x-9h-yOZ" customClass="EmojiCreaterViewController" customModule="EmojiDictionary2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="q2Y-FL-hvX">
+                <viewController id="9kk-bM-G6f" customClass="EmojiCreaterViewController" customModule="EmojiDictionary2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s2w-gg-A7t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="REi-IZ-dVz"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="jRx-GK-2bD">
+                                <rect key="frame" x="0.0" y="130.66666666666663" width="414" height="476"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new Emoji!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fi9-ON-ECF">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uRt-Yl-4Uu">
+                                        <rect key="frame" x="0.0" y="116" width="414" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vJM-5l-CY8">
+                                        <rect key="frame" x="0.0" y="226.00000000000003" width="414" height="29.999999999999972"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1im-Rs-IAG">
+                                        <rect key="frame" x="0.0" y="336" width="414" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fsf-yj-jD9">
+                                        <rect key="frame" x="0.0" y="446" width="414" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87n-7e-zr8">
+                                <rect key="frame" x="0.0" y="599" width="414" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="whenButtonPressed:" destination="ftc-nt-CtK" eventType="touchUpInside" id="Wwx-YM-LiD"/>
+                                    <action selector="whenButtonPressed:" destination="9kk-bM-G6f" eventType="touchUpInside" id="ohk-UR-SeM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jRx-GK-2bD" firstAttribute="leading" secondItem="yaz-jT-osH" secondAttribute="leading" id="9nj-qP-LsK"/>
+                            <constraint firstItem="yaz-jT-osH" firstAttribute="trailing" secondItem="jRx-GK-2bD" secondAttribute="trailing" id="QlK-a7-bB1"/>
+                            <constraint firstItem="jRx-GK-2bD" firstAttribute="centerY" secondItem="s2w-gg-A7t" secondAttribute="centerY" id="bSA-jh-ZOi"/>
+                            <constraint firstItem="jRx-GK-2bD" firstAttribute="centerX" secondItem="s2w-gg-A7t" secondAttribute="centerX" id="mwO-Ae-0Of"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yaz-jT-osH"/>
                     </view>
+                    <connections>
+                        <outlet property="stackView" destination="jRx-GK-2bD" id="Ni2-aH-tOr"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ntU-DN-qCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEe-2N-z1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ftc-nt-CtK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2158" y="525"/>
+            <point key="canvasLocation" x="2158" y="542"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SKn-TT-xhB">
@@ -139,7 +204,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJM-xE-tRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="173"/>
+            <point key="canvasLocation" x="280" y="157"/>
         </scene>
     </scenes>
 </document>
