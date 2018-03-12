@@ -14,6 +14,12 @@ class EmojiDetailViewController: UIViewController {
     @IBOutlet weak var EmojiDescriptionLabel: UILabel!
     @IBOutlet weak var EmojiUsageLabel: UILabel!
     @IBOutlet weak var EmojiNameLabel: UILabel!
+    
+    var emojiSymbol: Emoji!
+    var emojiDescription: Emoji!
+    var emojiUsage: Emoji!
+    var emojiName: Emoji!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
